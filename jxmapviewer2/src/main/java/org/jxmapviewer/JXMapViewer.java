@@ -199,6 +199,7 @@ public class JXMapViewer extends JPanel implements DesignMode
 		// calculate the "visible" viewport area in tiles
 		int numWide = viewportBounds.width / size + 2;
 		int numHigh = viewportBounds.height / size + 2;
+                System.out.println(viewportBounds);
 
 		// TilePoint topLeftTile = getTileFactory().getTileCoordinate(
 		// new Point2D.Double(viewportBounds.x, viewportBounds.y));
@@ -219,6 +220,7 @@ public class JXMapViewer extends JPanel implements DesignMode
 			{
 				int itpx = x + tpx;// topLeftTile.getX();
 				int itpy = y + tpy;// topLeftTile.getY();
+                                
 				// TilePoint point = new TilePoint(x + topLeftTile.getX(), y + topLeftTile.getY());
 				// only proceed if the specified tile point lies within the area being painted
 				if (g.getClipBounds().intersects(
@@ -297,7 +299,8 @@ public class JXMapViewer extends JPanel implements DesignMode
 
 	private boolean isTileOnMap(int x, int y, Dimension mapSize)
 	{
-		return y >= 0 && y < mapSize.getHeight();
+                return true;
+		//return y >= 0 && y < mapSize.getHeight();
 	}
 
 	/**
@@ -605,14 +608,14 @@ public class JXMapViewer extends JPanel implements DesignMode
 		// If center is outside (0, 0,mapWidth, mapHeight)
 		// compute modulo to get it back in.
 		{
-			centerX = centerX % mapWidth;
-			centerY = centerY % mapHeight;
+			//centerX = centerX % mapWidth;
+			//centerY = centerY % mapHeight;
 
-			if (centerX < 0)
-				centerX += mapWidth;
+			//if (centerX < 0)
+				//centerX += mapWidth;
 
-			if (centerY < 0)
-				centerY += mapHeight;
+			//if (centerY < 0)
+				//centerY += mapHeight;
 		}
 
 		GeoPosition oldGP = this.getCenterPosition();

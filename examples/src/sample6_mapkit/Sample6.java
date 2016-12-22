@@ -29,7 +29,7 @@ public class Sample6
     {
         final JXMapKit jXMapKit = new JXMapKit();
         TileFactoryInfo info = new OSMTileFactoryInfo();
-        DefaultTileFactory tileFactory = new DefaultTileFactory(info);
+        DefaultTileFactory tileFactory = new DefaultTileFactory(new OSMTileFactoryInfo());
         jXMapKit.setTileFactory(tileFactory);
 
         //location of Java

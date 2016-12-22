@@ -47,6 +47,7 @@ public class Sample5
 //		factories.add(new EmptyTileFactory());
 		factories.add(new DefaultTileFactory(osmInfo));
 		factories.add(new DefaultTileFactory(veInfo));
+                factories.add(new TestTileFactory(new TestTileFactoryInfo()));
 		
 		// Setup JXMapViewer
 		final JXMapViewer mapViewer = new JXMapViewer();
@@ -113,5 +114,4 @@ public class Sample5
 		
 		t.start();
 	}
-	
 }

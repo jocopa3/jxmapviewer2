@@ -54,20 +54,20 @@ public class PanMouseInputListener extends MouseInputAdapter
 				y += prev.y - current.y;
 		}
 
-		if (!viewer.isNegativeYAllowed())
-		{
-			if (y < 0)
-			{
-				y = 0;
-			}
-		}
+		//if (!viewer.isNegativeYAllowed())
+		//{
+			//if (y < 0)
+			//{
+			//	y = 0;
+			//}
+		//}
 
 		int maxHeight = (int) (viewer.getTileFactory().getMapSize(viewer.getZoom()).getHeight() * viewer
 				.getTileFactory().getTileSize(viewer.getZoom()));
-		if (y > maxHeight)
-		{
-			y = maxHeight;
-		}
+		//if (y > maxHeight)
+		//{
+		//	y = maxHeight;
+		//}
 
 		prev = current;
 		viewer.setCenter(new Point2D.Double(x, y));

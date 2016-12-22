@@ -48,6 +48,7 @@ public final class GeoUtil
 	 */
 	public static boolean isValidTile(int x, int y, int zoomLevel, TileFactoryInfo info)
 	{
+            /*
 		// int x = (int)coord.getX();
 		// int y = (int)coord.getY();
 		// if off the map to the top or left
@@ -70,6 +71,7 @@ public final class GeoUtil
 		{
 			return false;
 		}
+            */
 		return true;
 	}
 
@@ -100,14 +102,14 @@ public final class GeoUtil
 		double x = info.getMapCenterInPixelsAtZoom(zoomLevel).getX() + longitude
 				* info.getLongitudeDegreeWidthInPixels(zoomLevel);
 		double e = Math.sin(latitude * (Math.PI / 180.0));
-		if (e > 0.9999)
-		{
-			e = 0.9999;
-		}
-		if (e < -0.9999)
-		{
-			e = -0.9999;
-		}
+		//if (e > 0.9999)
+		//{
+		//	e = 0.9999;
+		//}
+		//if (e < -0.9999)
+		//{
+		//	e = -0.9999;
+		//}
 		double y = info.getMapCenterInPixelsAtZoom(zoomLevel).getY() + 0.5 * Math.log((1 + e) / (1 - e)) * -1
 				* (info.getLongitudeRadianWidthInPixels(zoomLevel));
 		return new Point2D.Double(x, y);

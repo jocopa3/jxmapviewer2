@@ -63,7 +63,7 @@ public abstract class AbstractTileFactory extends TileFactory
     // of GoogleTileFactories because each tile is, really, a singleton.
     private Map<String, Tile> tileMap = new HashMap<String, Tile>();
 
-    private TileCache cache = new TileCache();
+    private TileCache<URI> cache = new TileCache<URI>();
 
     /**
      * Returns the tile that is located at the given tilePoint
